@@ -8,13 +8,14 @@ http.createServer(function (req, res) {
     form.parse(req, function (err, fields, files) {
       var oldpath = files.filetoupload.path;
       res.write('oldpath =' + oldpath);
-      var newpath = '/' + files.filetoupload.name;
-      res.write('newpath =' + newpath);
-      fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-        res.write('File uploaded and moved!');
-        res.end();
-      });
+      //var newpath = '/' + files.filetoupload.name;
+      //res.write('newpath =' + newpath);
+      //fs.rename(oldpath, newpath, function (err) {
+    //    if (err) throw err;
+     //   res.write('File uploaded and moved!');
+      //  res.end();
+    //  });
+    res.end();
  });
   } else {
     res.writeHead(200, {'Content-Type': 'text/html'});
